@@ -1,0 +1,14 @@
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/course\.php$
+    RewriteCond %{QUERY_STRING} !token= [NC]
+    RewriteRule .* - [F]
+	    <FilesMatch "\.(mp4|txt|db)$">
+        Order allow,deny
+        Deny from all
+        ErrorDocument 403 404notfound
+    </FilesMatch>
+    <FilesMatch "\.json$">
+        Order allow,deny
+        Deny from all
+        ErrorDocument 403 404notfound
+    </FilesMatch>
